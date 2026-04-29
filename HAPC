@@ -1,0 +1,1190 @@
+title: PC
+path: PC
+type: sections
+sections:
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Séjour
+        icon: mdi:sofa
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_cave_a_vin
+        name: Cave à Vin
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_cave_a_vin_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_cave_a_vin_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_cave_a_vin
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_cave_a_vin
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_moustique
+        name: Moustique
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_moustique_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_moustique_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_moustique
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_moustique
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_poele
+        name: Poêle
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_poele_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_poele_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_poele
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_poele
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: separator
+        name: Cuisine
+        icon: mdi:silverware-fork-knife
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_refregirateur
+        name: Réfrigérateur
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_refregirateur_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_refregirateur_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_refregirateur
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_refregirateur
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: separator
+        name: Garage
+        icon: mdi:garage
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_etabli
+        name: Etabli
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_etabli_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_etabli_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_etabli
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_etabli
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: separator
+        name: Buanderie
+        icon: mdi:washing-machine
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_seche_linge
+        name: Sèche-linge
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_seche_linge_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_seche_linge_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_seche_linge
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_seche_linge
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_lave_linge
+        name: Lave-linge
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_lave_linge_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_lave_linge_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_lave_linge
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_lave_linge
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Imprimante 3D
+        icon: mdi:printer-3d
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_imprimante_3d
+        name: Imprimante 3D
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_imprimante_3d_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_imprimante_3d_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_imprimante_3d
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_imprimante_3d
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: separator
+        name: Bureau
+        icon: mdi:desk
+        sub_button:
+          main: []
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.multiprise_bureau_outlet_2
+            name: Prise 1
+            icon: mdi:power-socket-fr
+            tap_action:
+              action: more-info
+            icon_tap_action:
+              action: more-info
+            button_type: button
+            sub_button:
+              bottom: []
+              main: []
+            modules:
+              - rmn_conditional_background_color
+              - conditional_icon
+            rmn_conditional_background_color:
+              default_card_background:
+                color_mode: preset
+                color_preset: dark-grey
+              default_icon_background:
+                color_mode: preset
+                color_preset: dark-grey
+              conditional_background_1:
+                card_background:
+                  color_mode: preset
+                  color_preset: accent
+                icon_background:
+                  color_mode: wheel
+                  color_preset: dark-grey
+                conditions:
+                  - condition: state
+                    entity_id: switch.multiprise_bureau_outlet_2
+                    state:
+                      - "on"
+            conditional_icon:
+              icon_true: mdi:power-socket-fr
+              icon_false: mdi:power-socket-fr
+              advanced_settings:
+                color_true: accent
+                color_false: white
+              conditions:
+                - condition: state
+                  entity_id: switch.multiprise_bureau_outlet_2
+                  state:
+                    - "on"
+            button_action:
+              tap_action:
+                action: more-info
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.multiprise_bureau_outlet_3
+            name: Prise 2
+            icon: mdi:power-socket-fr
+            tap_action:
+              action: more-info
+            icon_tap_action:
+              action: more-info
+            button_type: button
+            sub_button:
+              bottom: []
+              main: []
+            modules:
+              - rmn_conditional_background_color
+              - conditional_icon
+            rmn_conditional_background_color:
+              default_card_background:
+                color_mode: preset
+                color_preset: dark-grey
+              default_icon_background:
+                color_mode: preset
+                color_preset: dark-grey
+              conditional_background_1:
+                card_background:
+                  color_mode: preset
+                  color_preset: accent
+                icon_background:
+                  color_mode: wheel
+                  color_preset: dark-grey
+                conditions:
+                  - condition: state
+                    entity_id: switch.multiprise_bureau_outlet_3
+                    state:
+                      - "on"
+            conditional_icon:
+              icon_true: mdi:power-socket-fr
+              icon_false: mdi:power-socket-fr
+              advanced_settings:
+                color_true: accent
+                color_false: white
+              conditions:
+                - condition: state
+                  entity_id: switch.multiprise_bureau_outlet_3
+                  state:
+                    - "on"
+            button_action:
+              tap_action:
+                action: more-info
+      - type: horizontal-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.multiprise_bureau_outlet_4
+            name: Prise 3
+            icon: mdi:power-socket-fr
+            tap_action:
+              action: more-info
+            icon_tap_action:
+              action: more-info
+            button_type: button
+            sub_button:
+              bottom: []
+              main: []
+            modules:
+              - rmn_conditional_background_color
+              - conditional_icon
+            rmn_conditional_background_color:
+              default_card_background:
+                color_mode: preset
+                color_preset: dark-grey
+              default_icon_background:
+                color_mode: preset
+                color_preset: dark-grey
+              conditional_background_1:
+                card_background:
+                  color_mode: preset
+                  color_preset: accent
+                icon_background:
+                  color_mode: wheel
+                  color_preset: dark-grey
+                conditions:
+                  - condition: state
+                    entity_id: switch.multiprise_bureau_outlet_4
+                    state:
+                      - "on"
+            conditional_icon:
+              icon_true: mdi:power-socket-fr
+              icon_false: mdi:power-socket-fr
+              advanced_settings:
+                color_true: accent
+                color_false: white
+              conditions:
+                - condition: state
+                  entity_id: switch.multiprise_bureau_outlet_4
+                  state:
+                    - "on"
+            button_action:
+              tap_action:
+                action: more-info
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.multiprise_bureau_outlet_5
+            name: Prise USB
+            icon: mdi:usb
+            tap_action:
+              action: more-info
+            icon_tap_action:
+              action: more-info
+            button_type: button
+            sub_button:
+              bottom: []
+              main: []
+            modules:
+              - rmn_conditional_background_color
+              - conditional_icon
+            rmn_conditional_background_color:
+              default_card_background:
+                color_mode: preset
+                color_preset: dark-grey
+              default_icon_background:
+                color_mode: preset
+                color_preset: dark-grey
+              conditional_background_1:
+                card_background:
+                  color_mode: preset
+                  color_preset: accent
+                icon_background:
+                  color_mode: wheel
+                  color_preset: dark-grey
+                conditions:
+                  - condition: state
+                    entity_id: switch.multiprise_bureau_outlet_5
+                    state:
+                      - "on"
+            conditional_icon:
+              icon_true: mdi:usb
+              icon_false: mdi:usb
+              advanced_settings:
+                color_true: accent
+                color_false: white
+              conditions:
+                - condition: state
+                  entity_id: switch.multiprise_bureau_outlet_5
+                  state:
+                    - "on"
+            button_action:
+              tap_action:
+                action: more-info
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_bureau
+        name: PC Bureau
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_bureau_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_bureau_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_bureau
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_bureau
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: separator
+        name: Baie Informatique
+        icon: mdi:server-network
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_baie_info
+        name: Baie Info
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_baie_info_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_baie_info_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_baie_info
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_baie_info
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+      - type: custom:bubble-card
+        card_type: button
+        entity: switch.pc_tablette
+        name: Tablette
+        icon: mdi:power-socket-fr
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: button
+        sub_button:
+          main:
+            - entity: sensor.pc_tablette_power
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.pc_tablette_energy
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: state
+                entity_id: switch.pc_tablette
+                state:
+                  - "on"
+        conditional_icon:
+          icon_true: mdi:power-socket-fr
+          icon_false: mdi:power-socket-fr
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: state
+              entity_id: switch.pc_tablette
+              state:
+                - "on"
+        button_action:
+          tap_action:
+            action: more-info
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Chauffe eau
+        icon: mdi:water-boiler
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: sensor.compteur_energie_2_power_l2
+        name: CE Cuisine
+        icon: mdi:water-boiler
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: state
+        sub_button:
+          main:
+            - entity: sensor.compteur_energie_2_power_l2
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.compteur_energie_2_energy_l2
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: numeric_state
+                entity_id: sensor.compteur_energie_2_power_l2
+                above: 0
+        conditional_icon:
+          icon_true: mdi:water-boiler
+          icon_false: mdi:water-boiler-off
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: numeric_state
+              entity_id: sensor.compteur_energie_2_power_l2
+              above: 0
+        button_action:
+          tap_action:
+            action: more-info
+        show_state: false
+      - type: custom:bubble-card
+        card_type: button
+        entity: sensor.compteur_energie_2_power_l1
+        name: CE SDB
+        icon: mdi:water-boiler
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: state
+        sub_button:
+          main:
+            - entity: sensor.compteur_energie_2_power_l1
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.compteur_energie_2_energy_l1
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: numeric_state
+                entity_id: sensor.compteur_energie_2_power_l1
+                above: 0
+        conditional_icon:
+          icon_true: mdi:water-boiler
+          icon_false: mdi:water-boiler-off
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: numeric_state
+              entity_id: sensor.compteur_energie_2_power_l1
+              above: 0
+        button_action:
+          tap_action:
+            action: more-info
+        show_state: false
+      - type: custom:bubble-card
+        card_type: separator
+        name: Chauffage
+        icon: mdi:radiator
+        sub_button:
+          main: []
+          bottom: []
+      - type: custom:bubble-card
+        card_type: button
+        entity: sensor.compteur_energie_2_power_l3
+        name: Chauffage
+        icon: mdi:heat-wave
+        tap_action:
+          action: more-info
+        icon_tap_action:
+          action: more-info
+        button_type: state
+        sub_button:
+          main:
+            - entity: sensor.compteur_energie_2_power_l3
+              icon: mdi:lightning-bolt
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+            - entity: sensor.compteur_energie_2_energy_l3
+              icon: mdi:meter-electric
+              show_name: false
+              show_state: true
+              show_icon: true
+              state_background: false
+              tap_action:
+                action: more-info
+          bottom: []
+        modules:
+          - rmn_conditional_background_color
+          - conditional_icon
+        rmn_conditional_background_color:
+          default_card_background:
+            color_mode: preset
+            color_preset: dark-grey
+          default_icon_background:
+            color_mode: preset
+            color_preset: dark-grey
+          conditional_background_1:
+            card_background:
+              color_mode: preset
+              color_preset: accent
+            icon_background:
+              color_mode: wheel
+              color_preset: dark-grey
+            conditions:
+              - condition: numeric_state
+                entity_id: sensor.compteur_energie_2_power_l3
+                above: 10
+        conditional_icon:
+          icon_true: mdi:radiator
+          icon_false: mdi:radiator-disabled
+          advanced_settings:
+            color_true: accent
+            color_false: white
+          conditions:
+            - condition: numeric_state
+              entity_id: sensor.compteur_energie_2_power_l3
+              above: 10
+        button_action:
+          tap_action:
+            action: more-info
+        show_state: false
+max_columns: 3
+icon: mdi:power-plug
+cards: []
+background:
+  opacity: 33
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: /api/image/serve/95a2c116b33752889d81bf8fe3734c90/original
