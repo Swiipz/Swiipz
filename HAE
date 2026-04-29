@@ -1,0 +1,565 @@
+type: sections
+max_columns: 3
+title: Panneaux Solaire
+path: panneaux-solaire
+icon: mdi:home-lightning-bolt
+sections:
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Prévision solaire
+        icon: mdi:solar-power-variant
+        sub_button:
+          main: []
+          bottom: []
+        card_mod:
+          style: |
+            ha-card {
+              background: transparent !important;
+              box-shadow: none !important;
+              border: none !important;
+            }
+            .bubble-separator {
+              color: #FFFF !important;
+              font-size: 11px !important;
+              font-weight: 600 !important;
+              letter-spacing: 3px !important;
+              text-transform: uppercase !important;
+            }
+      - type: vertical-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: Aujourd'hui
+            icon: mdi:white-balance-sunny
+            card_mod:
+              style: |
+                ha-card {
+                  background: transparent !important;
+                  box-shadow: none !important;
+                  border: none !important;
+                }
+                .bubble-separator {
+                  color: #F5A623 !important;
+                  font-size: 11px !important;
+                  font-weight: 700 !important;
+                  letter-spacing: 3px !important;
+                  text-transform: uppercase !important;
+                }
+                .bubble-icon {
+                  color: #F5A623 !important;
+                }
+          - type: custom:bubble-card
+            card_type: button
+            entity: sensor.power_highest_peak_time_today
+            name: Heure du pic
+            icon: mdi:clock-outline
+            show_state: true
+            card_mod:
+              style: |
+                ha-card {
+                .bubble-state {
+                  color: #ffffff !important;
+                  font-size: 16px !important;
+                  font-weight: 600 !important;
+                }
+                .bubble-icon {
+                  color: #ffffff !important;
+                  --bubble-icon-background-color: transparent !important;
+                }
+          - type: horizontal-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                entity: sensor.energy_production_today
+                name: Production totale
+                icon: mdi:lightning-bolt
+                show_state: true
+                button_type: switch
+                sub_button:
+                  main: []
+                  bottom: []
+                modules:
+                  - progress_bar
+                progress_bar:
+                  min_value: 0
+                  max_value: 0
+                  progress_color: accent
+                card_mod:
+                  style: |
+                    ha-card {
+
+                    }
+                    .bubble-state {
+                      color: #ffffff !important;
+                      font-size: 16px !important;
+                      font-weight: 600 !important;
+                    }
+                    .bubble-icon {
+                      color: #ffffff !important;
+                      --bubble-icon-background-color: transparent !important;
+                    }
+              - type: custom:bubble-card
+                card_type: button
+                entity: sensor.energy_production_today_remaining
+                name: Production restante
+                icon: mdi:battery-charging
+                show_state: true
+                button_type: switch
+                sub_button:
+                  main: []
+                  bottom: []
+                modules:
+                  - progress_bar
+                progress_bar:
+                  min_value: 0
+                  progress_color: accent
+                card_mod:
+                  style: |
+                    ha-card {
+
+                    }
+                    .bubble-state {
+                      color: #ffffff !important;
+                      font-size: 16px !important;
+                      font-weight: 600 !important;
+                    }
+                    .bubble-icon {
+                      color: #ffffff !important;
+                      --bubble-icon-background-color: transparent !important;
+                    }
+          - type: custom:bubble-card
+            card_type: button
+            entity: sensor.indevolt_cms_sf2000_daily_production
+            name: Production solaire réalisé
+            icon: mdi:lightning-bolt
+            show_state: true
+            button_type: switch
+            sub_button:
+              main: []
+              bottom: []
+            card_mod:
+              style: |
+                ha-card {
+                .bubble-state {
+                  color: #ffffff !important;
+                  font-size: 16px !important;
+                  font-weight: 600 !important;
+                }
+                .bubble-icon {
+                  color: #ffffff !important;
+                  --bubble-icon-background-color: transparent !important;
+                }
+          - type: custom:bubble-card
+            card_type: separator
+            name: Demain
+            icon: mdi:weather-sunny-off
+            card_mod:
+              style: |
+                ha-card {
+                  background: transparent !important;
+                  box-shadow: none !important;
+                  border: none !important;
+                }
+                .bubble-separator {
+                  color: #7EB8F7 !important;
+                  font-size: 11px !important;
+                  font-weight: 700 !important;
+                  letter-spacing: 3px !important;
+                  text-transform: uppercase !important;
+                }
+                .bubble-icon {
+                  color: #7EB8F7 !important;
+                }
+          - type: custom:bubble-card
+            card_type: button
+            entity: sensor.power_highest_peak_time_tomorrow
+            name: Heure du pic
+            icon: mdi:clock-outline
+            show_state: true
+            card_mod:
+              style: |
+                ha-card {
+                .bubble-state {
+                  color: #ffffff !important;
+                  font-size: 16px !important;
+                  font-weight: 600 !important;
+                }
+                .bubble-icon {
+                  color: #ffffff !important;
+                  --bubble-icon-background-color: transparent !important;
+                }
+          - type: custom:bubble-card
+            card_type: button
+            entity: sensor.energy_production_tomorrow
+            name: Production estimée
+            icon: mdi:weather-partly-cloudy
+            show_state: true
+            button_type: switch
+            sub_button:
+              main: []
+              bottom: []
+            modules:
+              - progress_bar
+            card_mod:
+              style: |
+                ha-card {
+                .bubble-state {
+                  color: #ffffff !important;
+                  font-size: 16px !important;
+                  font-weight: 600 !important;
+                }
+                .bubble-icon {
+                  color: #ffffff !important;
+                  --bubble-icon-background-color: transparent !important;
+                }
+  - type: grid
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:modern-circular-gauge
+            secondary: {}
+            tertiary: {}
+            min: 0
+            max: 5000
+            start_from_zero: false
+            adaptive_state_color: true
+            segments:
+              - from: 0
+                color:
+                  - 0
+                  - 249
+                  - 0
+              - from: 1000
+                color:
+                  - 255
+                  - 251
+                  - 0
+              - from: 3000
+                color:
+                  - 255
+                  - 38
+                  - 0
+            unit: W
+            needle: true
+            show_unit: true
+            show_state: true
+            header_position: bottom
+            smooth_segments: false
+            adaptive_icon_color: true
+            show_icon: true
+            icon: mdi:transmission-tower
+            show_header: true
+            entity: sensor.compteur_energy_power
+            name: " "
+          - type: custom:modern-circular-gauge
+            secondary: {}
+            tertiary: {}
+            max: 800
+            start_from_zero: false
+            adaptive_state_color: true
+            segments:
+              - color:
+                  - 255
+                  - 38
+                  - 0
+                from: -800
+              - from: 0
+                color:
+                  - 255
+                  - 251
+                  - 0
+              - from: "300"
+                color:
+                  - 0
+                  - 249
+                  - 0
+            name: " "
+            unit: W
+            needle: true
+            show_unit: true
+            show_state: true
+            header_position: bottom
+            smooth_segments: false
+            adaptive_icon_color: true
+            show_icon: true
+            icon: mdi:battery-charging-80
+            show_header: true
+            entity: sensor.indevolt_cms_sf2000_battery_power
+            min: -800
+          - type: custom:modern-circular-gauge
+            secondary: {}
+            tertiary: {}
+            max: 800
+            start_from_zero: false
+            adaptive_state_color: true
+            segments:
+              - color:
+                  - 255
+                  - 38
+                  - 0
+                from: 0
+              - from: 100
+                color:
+                  - 255
+                  - 251
+                  - 0
+              - color:
+                  - 0
+                  - 249
+                  - 0
+                from: 200
+            name: " "
+            unit: W
+            needle: true
+            show_unit: true
+            show_state: true
+            header_position: bottom
+            smooth_segments: false
+            adaptive_icon_color: true
+            show_icon: true
+            icon: mdi:solar-panel
+            show_header: true
+            entity: sensor.indevolt_cms_sf2000_dc_output_power
+            min: 0
+      - type: custom:vertical-stack-in-card
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.indevolt_cms_sf2000_battery_soc
+                primary_info: none
+                secondary_info: name
+                name: "% Batterie SF2000"
+                icon: mdi:battery
+                icon_color: >-
+                  {% set soc = states('sensor.indevolt_cms_sf2000_battery_soc')
+                  | int %}
+
+                  {% if soc > 75 %} #4caf50
+
+                  {% elif soc > 50 %} #8bc34a
+
+                  {% elif soc > 25 %} #ff9800
+
+                  {% else %} #f44336
+
+                  {% endif %}
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+                    mushroom-entity-card mushroom-state-item .secondary {
+                      font-size: 16px !important;
+                      font-weight: bold !important;
+                    }
+              - type: custom:bar-card
+                entities:
+                  - entity: sensor.indevolt_cms_sf2000_battery_soc
+                positions:
+                  minmax: "off"
+                  title: "off"
+                  icon: "off"
+                  name: "off"
+                max: 100
+                severity:
+                  - color: "#f44336"
+                    from: 0
+                    to: 25
+                  - color: "#ff9800"
+                    from: 25
+                    to: 50
+                  - color: "#8bc34a"
+                    from: 50
+                    to: 75
+                  - color: "#4caf50"
+                    from: 75
+                    to: 100
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 70%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    bar-card-value {
+                      font-size: 16px !important;
+                      font-weight: bold !important;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(to right, var(--card-background-color), transparent);
+                      --ha-card-border-width: 0;
+                    }
+            columns: 1
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:apexcharts-card
+        experimental:
+          color_threshold: true
+          brush: true
+        graph_span: 11h
+        header:
+          show: true
+          title: " "
+          show_states: false
+          colorize_states: true
+        apex_config:
+          legend:
+            show: tur
+          grid:
+            strokeDashArray: 0
+            borderColor: rgb(52,52,52)
+          xaxis:
+            axisBorder:
+              show: false
+              color: rgb(52,52,52)
+            tickAmount: 1
+            axisTicks:
+              show: false
+            labels:
+              style:
+                colors: rgb(128,128,128)
+          yaxis:
+            decimalsInFloat: 0
+            min: -400
+            max: 2000
+            tickAmount: 4
+            labels:
+              style:
+                colors: rgb(128,128,128)
+        all_series_config:
+          type: area
+          curve: smooth
+          stroke_width: 2
+          group_by:
+            func: avg
+            duration: 10min
+          color_threshold:
+            - value: 0
+              opacity: 0.2
+            - value: 1000
+              opacity: 0.7
+            - value: -1000
+              opacity: 0.7
+        series:
+          - entity: sensor.indevolt_cms_sf2000_meter_power
+            name: Réseau
+            color: rgb(66,73,241)
+            float_precision: 0
+          - entity: sensor.indevolt_cms_sf2000_dc_output_power
+            name: Solaire
+            color: rgb(255,165,0)
+            float_precision: 0
+          - entity: sensor.indevolt_cms_sf2000_battery_power
+            name: Batterie
+            color: rgb(30,227,137)
+            float_precision: 0
+  - type: grid
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: gauge
+                entity: sensor.indevolt_cms_sf2000_dc_input_power_1
+                name: Panneau 1
+                unit: W
+                min: 0
+                max: 800
+                needle: true
+                segments:
+                  - from: 0
+                    color: "#db4437"
+                  - from: 200
+                    color: "#f4b400"
+                  - from: 500
+                    color: "#0f9d58"
+              - type: gauge
+                entity: sensor.indevolt_cms_sf2000_dc_input_power_2
+                name: Panneau 2
+                unit: W
+                min: 0
+                max: 800
+                needle: true
+                segments:
+                  - from: 0
+                    color: "#db4437"
+                  - from: 200
+                    color: "#f4b400"
+                  - from: 500
+                    color: "#0f9d58"
+          - type: history-graph
+            title: null
+            hours_to_show: 24
+            entities:
+              - entity: sensor.indevolt_cms_sf2000_dc_input_power_1
+                name: Panneau 1
+              - entity: sensor.indevolt_cms_sf2000_dc_input_power_2
+                name: Panneau 2
+      - type: custom:stack-in-card
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: sensor.indevolt_cms_sf2000_main_temperature
+            primary_info: state
+            secondary_info: name
+            name: Batterie
+            icon: mdi:battery
+            icon_color: "#e15f41"
+            card_mod:
+              style: |
+                ha-card {
+                  z-index: 1;
+                  --ha-card-border-width: 0;
+                }
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.indevolt_cms_sf2000_main_temperature
+                color: "#e15f41"
+                smoothing: false
+            height: 80
+            hours_to_show: 8
+            points_per_hour: 20
+            line_width: 1
+            animate: true
+            show:
+              name: false
+              icon: false
+              state: false
+              legend: false
+              fill: fade
+            card_mod:
+              style: |
+                ha-card {
+                  position: absolute !important;
+                  height: 100%;
+                  width: 80%;
+                  right: 0px;
+                  bottom: 0px;
+                  --ha-card-border-width: 0;
+                }
+        card_mod:
+          style: |
+            ha-card {
+            --ha-card-border-width: 0;
+             }
+cards: []
+background:
+  opacity: 33
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: /api/image/serve/963e92b6d1bd7ce8c2b82c67e486c25c/original
