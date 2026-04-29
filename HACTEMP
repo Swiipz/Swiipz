@@ -1,0 +1,1094 @@
+type: sections
+max_columns: 3
+title: Températures
+path: temperatures
+icon: mdi:thermometer-water
+sections:
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Séjour
+        icon: mdi:sofa
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_sejour_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_sejour_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_sejour_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_sejour_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Salle de Bain
+        icon: mdi:shower-head
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_salle_de_bain_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_salle_de_bain_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_salle_de_bain_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_salle_de_bain_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Lison
+        icon: mdi:bed
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_chambre_lison_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_chambre_lison_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_chambre_lison_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_chambre_lison_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Camille
+        icon: mdi:bed
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_camille_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_camille_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_camille_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_camille_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Parents
+        icon: mdi:bed
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_chambre_parent_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.0xc09b9efffed4a821_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_chambre_parent_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_chambre_parent_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_chambre_parent_humidity
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_chambre_parent_humidity
+                    name: Conso
+                    color: "#00b4d8"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Buanderie
+        icon: mdi:washing-machine
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_buanderie_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_buanderie_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_buanderie_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_buanderie_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Garage
+        icon: mdi:garage
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_garage_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_garage_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_garage_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_garage_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_garage_humidity
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_garage_humidity
+                    name: Conso
+                    color: "#00b4d8"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Cave à vin
+        icon: mdi:bottle-wine
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_cave_vin_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_cave_vin_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_cave_vin_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_cave_vin_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_cave_vin_humidity
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_cave_vin_humidity
+                    name: Conso
+                    color: "#00b4d8"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Baie info
+        icon: mdi:server
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_baie_info_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_baie_info_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_baie_info_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_baie_info_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Extérieur
+        icon: mdi:sun-thermometer
+        sub_button:
+          main:
+            - entity: binary_sensor.gw2000a_wh65_battery
+              show_state: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.gw2000a_indoor_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.gw2000a_indoor_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.gw2000a_humidity
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.gw2000a_humidity
+                    name: Conso
+                    color: "#00b4d8"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Imprimante 3D
+        icon: mdi:printer-3d
+        sub_button:
+          main:
+            - entity: sensor.sonde_th_imprimante_3d_battery
+              show_state: true
+              state_background: false
+            - entity: sensor.sonde_th_imprimante_3d_last_seen
+              show_last_updated: true
+              state_background: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.sonde_th_imprimante_3d_temperature
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.sonde_th_imprimante_3d_temperature
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                  --ha-card-border-width: 0;
+                }
+background:
+  opacity: 33
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: /api/image/serve/4d8bcfa2d6e16e78874daa8bb6098057/original
+cards: []
