@@ -1,0 +1,138 @@
+type: sections
+max_columns: 3
+title: Sécurité
+path: secu
+icon: mdi:shield-home
+sections:
+  - type: grid
+    cards:
+      - camera_view: live
+        fit_mode: fill
+        type: picture-glance
+        title: Extérieur Entrée
+        entities:
+          - entity: light.exterieur_entree_projecteur
+        camera_image: camera.exterieur_entree_fluide
+        grid_options:
+          columns: 24
+          rows: auto
+      - camera_view: live
+        fit_mode: fill
+        type: picture-glance
+        title: Jardin
+        entities:
+          - entity: light.jardin_projecteur
+        camera_image: camera.jardin_fluide
+        grid_options:
+          columns: 24
+          rows: auto
+      - camera_view: live
+        fit_mode: fill
+        type: picture-glance
+        entities:
+          - entity: light.exterieur_garage_projecteur
+        camera_image: camera.exterieur_garage_fluide
+        grid_options:
+          columns: 12
+          rows: auto
+        title: Porte Garage
+      - camera_view: live
+        fit_mode: fill
+        type: picture-glance
+        entities: []
+        camera_image: camera.garage_fluide
+        grid_options:
+          columns: 12
+          rows: auto
+        title: Garage
+    column_span: 2
+  - type: grid
+    cards:
+      - camera_view: live
+        fit_mode: fill
+        type: picture-glance
+        entities:
+          - entity: light.sejour_projecteur
+        camera_image: camera.sejour_fluide
+        grid_options:
+          columns: 12
+          rows: auto
+        title: Sejour
+      - type: custom:mushroom-alarm-control-panel-card
+        states: []
+        grid_options:
+          columns: 6
+          rows: 1
+        entity: alarm_control_panel.somfy_home_alarm_maison
+        name: Alarme
+        tap_action:
+          action: more-info
+      - type: tile
+        entity: select.hub_reolink_mode_scenario
+        name: Etat REOLINK
+        icon: mdi:cctv
+        hide_state: false
+        vertical: false
+        features_position: bottom
+      - type: tile
+        entity: binary_sensor.do_porte_entree_2_contact
+        name: Porte Entrée
+        vertical: false
+        features_position: bottom
+      - type: tile
+        entity: binary_sensor.do_garage_contact
+        name: Porte Garage
+        vertical: false
+        features_position: bottom
+      - type: custom:bubble-card
+        card_type: separator
+        rows: "0.8"
+        name: Fuite d'eau
+        icon: mdi:water-pump
+      - type: tile
+        entity: binary_sensor.df_lavelinge_water_leak
+        name: Fuite Lave Linge
+        features_position: bottom
+        vertical: false
+      - type: tile
+        entity: binary_sensor.df_cuisine_water_leak
+        features_position: bottom
+        vertical: false
+        name: Fuite Cuisine
+      - type: tile
+        entity: sensor.df_lavelinge_battery
+        vertical: false
+        features_position: bottom
+      - type: tile
+        entity: sensor.df_cuisine_battery
+        vertical: false
+        features_position: bottom
+      - type: custom:bubble-card
+        card_type: separator
+        rows: "0.8"
+        name: Incendie
+        icon: mdi:fire-alert
+      - type: custom:mushroom-entity-card
+        entity: binary_sensor.detecteur_fumee_smoke
+        grid_options:
+          columns: 6
+          rows: 1
+        fill_container: false
+      - type: tile
+        grid_options:
+          columns: 6
+          rows: 1
+        entity: binary_sensor.detecteur_fumee_battery_low
+        vertical: false
+        features_position: bottom
+    column_span: 1
+cards: []
+dense_section_placement: false
+background:
+  opacity: 33
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: /api/image/serve/6887c422930fe6df5d1483beb60ca5a6/original
+top_margin: false
