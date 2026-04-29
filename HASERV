@@ -1,0 +1,973 @@
+title: Baie Info
+path: baie-info
+cards: []
+type: sections
+sections:
+  - type: grid
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: PV1
+            icon: mdi:server
+            sub_button:
+              main:
+                - entity: sensor.node_pve1_cpu_used
+                  state_background: false
+                  show_state: true
+                - entity: sensor.node_pve1_memory_used_percentage
+                  show_state: true
+                  state_background: false
+                - entity: sensor.node_pve1_disk_used_percentage
+                  show_state: true
+                  state_background: false
+              bottom: []
+          - square: false
+            type: grid
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.node_pve1_virtual_machines_running_2
+                icon_color: purple
+                name: VM Actives
+                primary_info: state
+                secondary_info: name
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                      }
+              - type: custom:mushroom-entity-card
+                entity: sensor.node_pve1_containers_running_2
+                icon_color: accent
+                name: Contenaires Actifs
+                primary_info: state
+                secondary_info: name
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                      }
+            columns: 2
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.disk_pve1_udss_ud2cs1ht100_512g_dev_sda_temperature_2
+                primary_info: state
+                secondary_info: name
+                name: SSD M.2
+                icon: mdi:harddisk
+                icon_color: "#e15f41"
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: >-
+                      sensor.disk_pve1_udss_ud2cs1ht100_512g_dev_sda_temperature_2
+                    color: "#e15f41"
+                    smoothing: false
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 20
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                --ha-card-border-width: 0;
+                 }
+          - type: custom:bubble-card
+            card_type: separator
+            name: PV2
+            icon: mdi:server
+            sub_button:
+              main:
+                - entity: sensor.node_pve2_cpu_used
+                  state_background: false
+                  show_state: true
+                - entity: sensor.node_pve2_memory_used_percentage
+                  show_state: true
+                  state_background: false
+                - entity: sensor.node_pve2_disk_used_percentage
+                  show_state: true
+                  state_background: false
+              bottom: []
+          - square: false
+            type: grid
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.node_pve1_virtual_machines_running_2
+                icon_color: purple
+                name: VM Actives
+                primary_info: state
+                secondary_info: name
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                      }
+              - type: custom:mushroom-entity-card
+                entity: sensor.node_pve1_containers_running_2
+                icon_color: accent
+                name: Contenaires Actifs
+                primary_info: state
+                secondary_info: name
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                      }
+            columns: 2
+          - square: false
+            type: grid
+            cards:
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: >-
+                      sensor.disk_pve2_pm9c1b_samsung_256gb_dev_nvme0n1_temperature
+                    primary_info: state
+                    secondary_info: name
+                    name: NVME
+                    icon: mdi:harddisk-plus
+                    icon_color: "#eb4d4b"
+                    card_mod:
+                      style: |
+                        ha-card {
+                          z-index: 1;
+                          --ha-card-border-width: 0;
+                        }
+                  - type: custom:mini-graph-card
+                    entities:
+                      - entity: >-
+                          sensor.disk_pve2_pm9c1b_samsung_256gb_dev_nvme0n1_temperature
+                        color: "#eb4d4b"
+                        smoothing: false
+                    height: 80
+                    hours_to_show: 8
+                    points_per_hour: 20
+                    line_width: 1
+                    animate: true
+                    show:
+                      name: false
+                      icon: false
+                      state: false
+                      legend: false
+                      fill: fade
+                    card_mod:
+                      style: |
+                        ha-card {
+                          position: absolute !important;
+                          height: 100%;
+                          width: 80%;
+                          right: 0px;
+                          bottom: 0px;
+                          --ha-card-border-width: 0;
+                        }
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                     }
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.disk_pve2_st32000542as_dev_sda_temperature
+                    primary_info: state
+                    secondary_info: name
+                    name: SSD M.2
+                    icon: mdi:harddisk
+                    icon_color: "#e15f41"
+                    card_mod:
+                      style: |
+                        ha-card {
+                          z-index: 1;
+                          --ha-card-border-width: 0;
+                        }
+                  - type: custom:mini-graph-card
+                    entities:
+                      - entity: sensor.disk_pve2_st32000542as_dev_sda_temperature
+                        color: "#e15f41"
+                        smoothing: false
+                    height: 80
+                    hours_to_show: 8
+                    points_per_hour: 20
+                    line_width: 1
+                    animate: true
+                    show:
+                      name: false
+                      icon: false
+                      state: false
+                      legend: false
+                      fill: fade
+                    card_mod:
+                      style: |
+                        ha-card {
+                          position: absolute !important;
+                          height: 100%;
+                          width: 80%;
+                          right: 0px;
+                          bottom: 0px;
+                          --ha-card-border-width: 0;
+                        }
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                     }
+            columns: 2
+      - square: false
+        type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: VM HA PROXMOX
+            icon: mdi:home-assistant
+            sub_button:
+              main: []
+              bottom: []
+          - type: vertical-stack
+            cards:
+              - square: false
+                type: grid
+                cards:
+                  - type: custom:mushroom-chips-card
+                    chips:
+                      - type: entity
+                        entity: sensor.qemu_home_assistant_102_cpu_used_2
+                        icon: mdi:home-assistant
+                        icon_color: "#25CCF7"
+                        name: Home Assistant VM
+                        content_info: name
+                  - type: custom:mushroom-chips-card
+                    chips:
+                      - type: entity
+                        entity: sensor.qemu_home_assistant_102_status_2
+                  - type: custom:mushroom-chips-card
+                    chips:
+                      - type: entity
+                        entity: sensor.qemu_home_assistant_102_last_boot_2
+                        icon: mdi:clock-time-two-outline
+                        icon_color: lime
+                columns: 3
+              - square: false
+                type: grid
+                cards:
+                  - type: custom:mushroom-entity-card
+                    icon_color: purple
+                    name: Charge CPU
+                    primary_info: state
+                    secondary_info: name
+                    entity: sensor.qemu_home_assistant_102_cpu_used_2
+                    card_mod:
+                      style: |
+                        ha-card {
+                        --ha-card-border-width: 0;
+                          }
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.qemu_home_assistant_102_memory_used_percentage_2
+                    icon_color: accent
+                    name: RAM utilisée
+                    primary_info: state
+                    secondary_info: name
+                    icon: mdi:chip
+                    card_mod:
+                      style: |
+                        ha-card {
+                        --ha-card-border-width: 0;
+                          }
+                  - type: custom:mushroom-entity-card
+                    icon_color: pink
+                    name: Charge disque
+                    primary_info: state
+                    secondary_info: name
+                    icon: mdi:harddisk
+                    entity: sensor.qemu_home_assistant_102_cpu_used_2
+                    card_mod:
+                      style: |
+                        ha-card {
+                        --ha-card-border-width: 0;
+                          }
+                columns: 1
+          - square: false
+            type: grid
+            cards:
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.qemu_home_assistant_102_network_in_2
+                    primary_info: state
+                    secondary_info: name
+                    name: Download
+                    icon: mdi:download-network
+                    icon_color: "#badc58"
+                    card_mod:
+                      style: |
+                        ha-card {
+                          z-index: 1;
+                          --ha-card-border-width: 0;
+                        }
+                  - type: custom:mini-graph-card
+                    entities:
+                      - entity: sensor.qemu_home_assistant_102_network_out_2
+                        color: "#badc58"
+                        smoothing: false
+                        aggregate_func: min
+                    height: 80
+                    hours_to_show: 8
+                    points_per_hour: 20
+                    line_width: 1
+                    animate: true
+                    show:
+                      name: false
+                      icon: false
+                      state: false
+                      legend: false
+                      fill: fade
+                    card_mod:
+                      style: |
+                        ha-card {
+                          position: absolute !important;
+                          height: 100%;
+                          width: 80%;
+                          right: 0px;
+                          bottom: 0px;
+                          --ha-card-border-width: 0;
+                        }
+                        ha-card:after {
+                          content: "";
+                          position: absolute;
+                          width: 100%;
+                          height: 100%;
+                          background: linear-gradient(to right, var(--card-background-color), transparent);
+                          --ha-card-border-width: 0;
+                        }
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                     }
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.qemu_home_assistant_102_network_out_2
+                    primary_info: state
+                    secondary_info: name
+                    name: Upload
+                    icon: mdi:upload-network
+                    icon_color: "#eb4d4b"
+                    card_mod:
+                      style: |
+                        ha-card {
+                          z-index: 1;
+                          --ha-card-border-width: 0;
+                        }
+                  - type: custom:mini-graph-card
+                    entities:
+                      - entity: sensor.qemu_home_assistant_102_network_out_2
+                        color: "#eb4d4b"
+                        smoothing: false
+                        aggregate_func: min
+                    height: 80
+                    hours_to_show: 8
+                    points_per_hour: 20
+                    line_width: 1
+                    animate: true
+                    show:
+                      name: false
+                      icon: false
+                      state: false
+                      legend: false
+                      fill: fade
+                    card_mod:
+                      style: |
+                        ha-card {
+                          position: absolute !important;
+                          height: 100%;
+                          width: 80%;
+                          right: 0px;
+                          bottom: 0px;
+                          --ha-card-border-width: 0;
+                        }
+                        ha-card:after {
+                          content: "";
+                          position: absolute;
+                          width: 100%;
+                          height: 100%;
+                          background: linear-gradient(to right, var(--card-background-color), transparent);
+                          --ha-card-border-width: 0;
+                        }
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                     }
+            columns: 2
+        columns: 1
+  - type: grid
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: PV1
+            icon: mdi:server
+            sub_button:
+              main:
+                - entity: sensor.sonde_th_baie_info_battery
+                  state_background: false
+                  show_state: true
+              bottom: []
+          - type: horizontal-stack
+            cards:
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-template-card
+                    entity: sensor.sonde_th_baie_info_temperature
+                    icon: mdi:thermometer
+                    primary: "{{ states(entity) ~ '°C' }}"
+                    secondary: ""
+                    icon_color: >-
+                      {% set t = states(entity)|float(0) %} {% if t < 25 %}
+                      green {% elif t < 27 %} yellow {% elif t < 28 %} amber {%
+                      elif t < 29 %} orange {% else %} red {% endif %}
+                    card_mod:
+                      style: |
+                        ha-card {
+                          z-index: 1;
+                          --ha-card-border-width: 0;
+                        }
+                  - type: custom:mini-graph-card
+                    entities:
+                      - entity: sensor.sonde_th_baie_info_temperature
+                        name: Conso
+                    color: "#00b4d8"
+                    color_thresholds:
+                      - value: 25
+                        color: green
+                      - value: 27
+                        color: yellow
+                      - value: 28
+                        color: "#ffc107"
+                      - value: 29
+                        color: orange
+                      - value: 30
+                        color: red
+                    smoothing: false
+                    aggregate_func: min
+                    height: 80
+                    hours_to_show: 8
+                    points_per_hour: 15
+                    line_width: 1
+                    animate: true
+                    show:
+                      name: false
+                      icon: false
+                      state: false
+                      legend: false
+                      fill: fade
+                    card_mod:
+                      style: |
+                        ha-card {
+                          position: absolute !important;
+                          height: 100%;
+                          width: 80%;
+                          right: 0px;
+                          bottom: 0px;
+                          --ha-card-border-width: 0;
+                        }
+                        ha-card:after {
+                          content: "";
+                          position: absolute;
+                          width: 100%;
+                          height: 100%;
+                          --ha-card-border-width: 0;
+                        }
+                card_mod:
+                  style: |
+                    ha-card { --ha-card-border-width: 0; }
+              - type: custom:stack-in-card
+                cards:
+                  - type: custom:mushroom-entity-card
+                    entity: sensor.sonde_th_baie_info_humidity
+                    primary_info: state
+                    secondary_info: none
+                    card_mod:
+                      style: |
+                        ha-card {
+                          z-index: 1;
+                          --ha-card-border-width: 0;
+                        }
+                  - type: custom:mini-graph-card
+                    entities:
+                      - entity: sensor.sonde_th_baie_info_humidity
+                        name: Conso
+                        color: "#00b4d8"
+                        smoothing: false
+                        aggregate_func: min
+                    height: 80
+                    hours_to_show: 8
+                    points_per_hour: 15
+                    line_width: 1
+                    animate: true
+                    show:
+                      name: false
+                      icon: false
+                      state: false
+                      legend: false
+                      fill: fade
+                    card_mod:
+                      style: |
+                        ha-card {
+                          position: absolute !important;
+                          height: 100%;
+                          width: 80%;
+                          right: 0px;
+                          bottom: 0px;
+                          --ha-card-border-width: 0;
+                        }
+                        ha-card:after {
+                          content: "";
+                          position: absolute;
+                          width: 100%;
+                          height: 100%;
+                         
+                          --ha-card-border-width: 0;
+                        }
+                card_mod:
+                  style: |
+                    ha-card {
+                    --ha-card-border-width: 0;
+                     }
+          - type: horizontal-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: button
+                scrolling_effect: true
+                show_icon: true
+                force_icon: false
+                show_state: false
+                show_last_changed: true
+                show_attribute: false
+                hold_action:
+                  action: more-info
+                double_tap_action:
+                  action: more-info
+                button_action:
+                  tap_action:
+                    action: more-info
+                  double_tap_action:
+                    action: more-info
+                  hold_action:
+                    action: more-info
+                sub_button:
+                  main:
+                    - show_state: true
+                      entity: sensor.pc_baie_info_power
+                      show_icon: true
+                      show_name: false
+                      state_background: false
+                  bottom: []
+                name: Baie Info
+                icon: mdi:server
+                entity: switch.pc_baie_info
+                button_type: switch
+                modules:
+                  - rmn_conditional_background_color
+                  - conditional_icon
+                rmn_conditional_background_color:
+                  default_card_background:
+                    color_preset: disabled
+                    color_mode: preset
+                  default_icon_background:
+                    color_preset: disabled
+                    color_mode: preset
+                  conditional_background_1:
+                    card_background:
+                      color_preset: green
+                      color_mode: preset
+                      opacity: 50
+                    icon_background:
+                      color_preset: black
+                      color_mode: preset
+                    conditions:
+                      - condition: state
+                        entity_id: switch.pc_baie_info
+                        state: "on"
+                conditional_icon:
+                  advanced_settings:
+                    color_true: green
+                    color_false: light-grey
+                  conditions:
+                    - condition: state
+                      entity_id: switch.pc_baie_info
+                      state: "on"
+              - type: custom:bubble-card
+                card_type: button
+                scrolling_effect: true
+                show_icon: true
+                force_icon: false
+                show_state: false
+                show_last_changed: true
+                show_attribute: false
+                hold_action:
+                  action: more-info
+                double_tap_action:
+                  action: more-info
+                button_action:
+                  tap_action:
+                    action: more-info
+                  double_tap_action:
+                    action: more-info
+                  hold_action:
+                    action: more-info
+                sub_button:
+                  main: []
+                  bottom: []
+                name: Fan Baie
+                icon: mdi:fan
+                button_type: switch
+                modules:
+                  - animated_icon
+                  - rmn_conditional_background_color
+                  - conditional_icon
+                animated_icon:
+                  mode: fan
+                rmn_conditional_background_color:
+                  default_card_background:
+                    color_preset: disabled
+                    color_mode: preset
+                  default_icon_background:
+                    color_preset: disabled
+                    color_mode: preset
+                  conditional_background_1:
+                    card_background:
+                      color_preset: green
+                      color_mode: preset
+                      opacity: 50
+                    icon_background:
+                      color_preset: black
+                      color_mode: preset
+                    conditions:
+                      - condition: state
+                        entity_id: switch.pc_solaire
+                        state: "on"
+                conditional_icon:
+                  advanced_settings:
+                    color_true: green
+                    color_false: light-grey
+                  conditions:
+                    - condition: state
+                      entity_id: switch.pc_solaire
+                      state: "on"
+                  icon_true: mdi:fan
+                  icon_false: mdi:fan
+                entity: switch.pc_ventilateur_baie
+          - type: custom:bubble-card
+            card_type: button
+            scrolling_effect: true
+            show_icon: true
+            force_icon: false
+            show_state: false
+            show_last_changed: true
+            show_attribute: false
+            hold_action:
+              action: more-info
+            double_tap_action:
+              action: more-info
+            button_action:
+              tap_action:
+                action: more-info
+              double_tap_action:
+                action: more-info
+              hold_action:
+                action: more-info
+            sub_button:
+              - entity: sensor.ups_etat
+                show_state: true
+                show_background: false
+              - show_state: true
+                entity: sensor.ups_charge_de_la_batterie
+                state_background: false
+              - entity: sensor.ups_autonomie_de_la_batterie
+                show_state: true
+                icon: mdi:clock-time-eight
+                state_background: false
+            name: Onduleur
+            icon: mdi:power-plug-battery
+            button_type: state
+            entity: sensor.ups_etat
+            modules:
+              - rmn_conditional_background_color
+              - conditional_icon
+            rmn_conditional_background_color:
+              conditional_background_1:
+                card_background:
+                  color_preset: red
+                  color_mode: preset
+                  opacity: 70
+                icon_background:
+                  color_preset: black
+                  color_mode: preset
+                conditions:
+                  - condition: not
+                    conditions:
+                      - condition: state
+                        entity_id: sensor.ups_etat
+                        state: Online
+              default_card_background:
+                color_preset: green
+                color_mode: preset
+                opacity: 50
+              default_icon_background:
+                color_preset: black
+                color_mode: preset
+            conditional_icon:
+              advanced_settings:
+                color_true: red
+                color_false: green
+              conditions:
+                - condition: not
+                  conditions:
+                    - condition: state
+                      entity_id: sensor.ups_etat
+                      state: Online
+              icon_false: mdi:power-plug-battery
+              icon_true: mdi:battery
+      - type: vertical-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: NAS
+            icon: mdi:nas
+            sub_button:
+              main:
+                - entity: sensor.nas1_utilisation_du_processeur_totale
+                  state_background: false
+                  show_state: true
+                  icon: mdi:cpu-64-bit
+                - entity: sensor.nas1_utilisation_de_la_memoire_reelle
+                  show_state: true
+                  state_background: false
+                  icon: mdi:memory
+                - entity: sensor.nas1_volume_1_espace_utilise
+                  show_state: true
+                  state_background: false
+              bottom: []
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-update-card
+                entity: update.nas1_mise_a_jour_dsm
+                icon: ""
+                icon_type: entity-picture
+                primary_info: state
+                secondary_info: name
+                name: MàJ DSM
+                grid_options:
+                  columns: 4
+                  rows: 1
+              - type: custom:mushroom-entity-card
+                entity: binary_sensor.nas1_etat_de_securite
+                icon: mdi:shield
+                name: Etat
+                grid_options:
+                  columns: 4
+                  rows: 1
+                primary_info: state
+                secondary_info: name
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_volume_1_etat
+                icon: ""
+                name: Volume
+                grid_options:
+                  columns: 4
+                  rows: 1
+                primary_info: state
+                secondary_info: name
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_temperature
+                primary_info: state
+                secondary_info: name
+                name: NAS
+                icon: mdi:nas
+                icon_color: "#ED4C67"
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.nas1_temperature
+                    name: Conso
+                    color: "#ED4C67"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 20
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                --ha-card-border-width: 0;
+                 }
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_volume_1_espace_utilise
+                primary_info: state
+                secondary_info: name
+                name: Disque utilisé
+                icon: mdi:harddisk
+                icon_color: "#B33771"
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:bar-card
+                name: HDD
+                decimal: 1
+                color: "#B33771"
+                entities:
+                  - entity: sensor.nas1_volume_1_volume_utilise
+                positions:
+                  minmax: "off"
+                  title: "off"
+                  icon: "off"
+                  name: "off"
+                severity:
+                  - color: "#B33771"
+                    from: 0
+                    to: 7.9
+                  - color: "#B33771"
+                    from: 8
+                    to: 16
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 70%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(to right, var(--card-background-color), transparent);
+                      --ha-card-border-width: 0;
+                    }
+            columns: 1
+            card_mod:
+              style: |
+                ha-card {
+                --ha-card-border-width: 0;
+                 }
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_drive_1_etat
+                name: HDD 1
+                primary_info: state
+                secondary_info: name
+                grid_options:
+                  columns: 6
+                  rows: 1
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_drive_2_etat
+                name: HDD 2
+                primary_info: state
+                secondary_info: name
+                grid_options:
+                  columns: 6
+                  rows: 1
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_drive_3_etat
+                name: HDD 3
+                primary_info: state
+                secondary_info: name
+                grid_options:
+                  columns: 6
+                  rows: 1
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_drive_4_etat
+                name: HDD 4
+                primary_info: state
+                secondary_info: name
+                grid_options:
+                  columns: 6
+                  rows: 1
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_m_2_drive_1_etat
+                primary_info: state
+                secondary_info: name
+                grid_options:
+                  columns: 6
+                  rows: 1
+                name: M.2 Drive 1
+              - type: custom:mushroom-entity-card
+                entity: sensor.nas1_m_2_drive_2_etat
+                name: M.2 Drive 2
+                primary_info: state
+                secondary_info: name
+                grid_options:
+                  columns: 6
+                  rows: 1
+max_columns: 2
+icon: mdi:server
+background:
+  opacity: 33
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: /api/image/serve/3c604d89b5554bc19e1ebca415bc3862/original
