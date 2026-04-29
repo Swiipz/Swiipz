@@ -1,0 +1,358 @@
+type: sections
+max_columns: 3
+title: Jardin
+path: jardin
+icon: mdi:sprinkler-variant
+sections:
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Pluie
+        icon: mdi:weather-pouring
+        sub_button:
+          main:
+            - entity: binary_sensor.gw2000a_wh65_battery
+              show_icon: true
+              show_state: true
+              show_background: false
+              show_name: false
+          bottom: []
+      - type: entities
+        entities:
+          - entity: sensor.pluie_journaliere
+            name: Aujourd'hui
+          - entity: sensor.pluie_hebdomadaire
+            name: Cette semaine
+          - entity: sensor.pluie_mensuelle
+            name: Ce mois
+          - entity: sensor.pluie_annuelle
+            name: Cette année
+      - type: custom:bubble-card
+        card_type: separator
+        name: Arrosage
+        icon: mdi:sprinkler-variant
+        sub_button:
+          main:
+            - entity: sensor.arrosage_auto_battery
+              show_icon: true
+              show_state: true
+              show_background: false
+              show_name: false
+          bottom: []
+      - type: entities
+        entities:
+          - entity: sensor.arrosage_auto_flow
+          - entity: sensor.water_daily
+            name: Jour
+          - entity: sensor.water_weekly
+            name: Semaine
+          - entity: sensor.water_monthly
+            name: Mois
+          - entity: sensor.water_yearly
+            name: Année
+          - entity: sensor.water_consumption_total
+            name: Total (depuis installation)
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Paramètre
+        icon: mdi:tune
+        sub_button:
+          main: []
+          bottom: []
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_datetime.arrosage_heure_matin
+            name: 🌅 Heure matin
+          - entity: input_datetime.arrosage_heure_canicule
+            name: 🌆 Heure canicule
+        state_color: false
+      - type: custom:bubble-card
+        card_type: button
+        button_type: name
+        sub_button:
+          main: []
+          bottom: []
+        tap_action:
+          action: navigate
+          navigation_path: "#paramarro"
+        name: Paramètre
+        button_action:
+          tap_action:
+            action: navigate
+            navigation_path: "#paramarro"
+        icon: mdi:sprinkler-variant
+      - type: vertical-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: pop-up
+            name: Paramètres
+            icon: mdi:card-bulleted-settings
+            hash: "#paramarro"
+            button_type: name
+            sub_button:
+              main: []
+              bottom: []
+          - type: entities
+            show_header_toggle: false
+            entities:
+              - entity: input_number.arrosage_duree_base
+                name: Durée base (min)
+              - entity: input_number.arrosage_duree_canicule
+                name: Durée canicule (min)
+              - entity: input_number.arrosage_seuil_pluie_skip
+                name: 🚫 Pluie pour annuler (mm)
+              - entity: input_number.arrosage_seuil_pluie_reduction
+                name: ⬇️ Pluie pour réduire (mm)
+              - entity: input_number.arrosage_temp_canicule
+                name: 🔥 Seuil canicule (°C)
+              - type: section
+                label: 📊 Poids(total=100)
+              - entity: input_number.arrosage_poids_humidite
+                name: 🌱 Poids humidité sol
+              - entity: input_number.arrosage_poids_pluie_jour
+                name: 🌧️ Poids pluie journalière
+              - entity: input_number.arrosage_poids_pluie_semaine
+                name: 📅 Poids pluie semaine
+              - entity: input_number.arrosage_poids_temperature
+                name: 🌡️ Poids température
+              - type: section
+                label: 🎯 Seuils score hydrique
+              - entity: input_number.arrosage_score_seuil_skip
+                name: 🚫 Score skip (%)
+              - entity: input_number.arrosage_score_seuil_reduction
+                name: ⬇️ Score réduction (%)
+      - type: vertical-stack
+        cards:
+          - type: custom:timer-bar-card
+            entities:
+              - timer.arrosage_potager
+            show_icon: false
+            show_name: false
+            active_color: "#00c853"
+            pause_color: "#ff6d00"
+            bar_height: 12px
+            bar_radius: 6px
+            bar_background: rgba(0,0,0,0.1)
+            text_width: 4em
+            styles:
+              card:
+                - border-radius: 16px
+                - padding: 16px 24px
+                - margin-top: "-8px"
+        visibility:
+          - condition: state
+            entity: timer.arrosage_potager
+            state: active
+  - type: grid
+    cards:
+      - type: custom:bubble-card
+        card_type: separator
+        name: Capteur Jardin
+        icon: mdi:flower
+        sub_button:
+          main:
+            - entity: sensor.capteur_jardin_battery
+              show_icon: true
+              show_state: true
+              show_background: false
+              show_name: false
+          bottom: []
+      - type: horizontal-stack
+        cards:
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.capteur_jardin_temperature
+                color: "#FF6B35"
+            line_width: 3
+            font_size: 75
+            name: T° Sol
+            icon: mdi:thermometer
+            hours_to_show: 24
+            points_per_hour: 2
+            show:
+              labels: true
+              points: false
+              legend: false
+              fill: fade
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.capteur_jardin_soil_moisture
+                color: "#4FC3F7"
+            line_width: 3
+            font_size: 75
+            name: Hum Sol
+            icon: mdi:water
+            hours_to_show: 24
+            points_per_hour: 2
+            show:
+              labels: true
+              points: false
+              legend: false
+              fill: fade
+          - type: custom:modern-circular-gauge
+            entity: sensor.arrosage_score_hydrique
+            name: Score Hydrique
+            min: 0
+            max: 100
+            secondary: {}
+            segments:
+              - color:
+                  - 255
+                  - 38
+                  - 0
+                from: 0
+              - from: 30
+                color:
+                  - 255
+                  - 251
+                  - 0
+              - color:
+                  - 0
+                  - 249
+                  - 0
+                from: 50
+            header_position: bottom
+            show_icon: false
+            show_header: true
+            show_entity_picture: false
+            gauge_type: standard
+            show_unit: true
+            unit_superscript: false
+            show_state: true
+            show_in_graph: false
+            adaptive_label_color: true
+            adaptive_graph_range: false
+            adaptive_state_color: true
+            adaptive_icon_color: false
+            start_from_zero: false
+            smooth_segments: false
+            needle: true
+      - type: markdown
+        title: 🌱 Résumé météo arrosage
+        content: >
+          {% set pluie_24h = states('sensor.gw2000a_24h_rain') | float %}
+
+          {% set pluie_prevue =
+          states('sensor.joux_la_ville_daily_precipitation') | float %}
+
+          {% set chance = states('sensor.joux_la_ville_rain_chance') | int %}
+
+
+          {% if chance > 70 or pluie_24h > 10 %}
+
+          🌧️ Il a plu **{{ pluie_24h }}mm** ces dernières 24h et **{{ chance
+          }}%** de chance de pluie prévue.<br>Arrosage inutile.
+
+          {% elif chance > 40 or pluie_prevue > 5 %}
+
+          🌦️ **{{ pluie_prevue }}mm** de pluie prévus avec **{{ chance }}%** de
+          risque.<br>Surveiller avant d'arroser.
+
+          {% elif pluie_24h == 0 and pluie_prevue == 0 %}
+
+          ☀️ Aucune pluie ces dernières 24h et aucune pluie prévue.
+
+          {% else %}
+
+          ☀️ Seulement **{{ pluie_24h }}mm** en 24h et **{{ chance }}%** de
+          risque de pluie.
+
+          {% endif %}
+
+
+          ---
+
+          ## {{ states('sensor.arrosage_resume') }}
+        card_mod:
+          style: |
+            ha-markdown {
+              font-size: 1.5em !important;
+            }
+      - type: custom:bubble-card
+        card_type: separator
+        name: Arrosage
+        icon: mdi:sprinkler-variant
+        sub_button:
+          main:
+            - entity: sensor.arrosage_auto_battery
+              show_icon: true
+              show_state: true
+              show_background: false
+              show_name: false
+          bottom: []
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: input_boolean.arrosage_mode_auto
+                name: Mode Auto
+                icon: mdi:robot
+                tap_action:
+                  action: toggle
+              - type: custom:mushroom-entity-card
+                entity: input_boolean.arrosage_suspendu
+                name: Suspendre
+                icon: mdi:pause-circle
+                tap_action:
+                  action: toggle
+              - type: custom:mushroom-entity-card
+                entity: switch.arrosage_auto
+                name: Vanne
+                icon: mdi:pipe-valve
+                tap_action:
+                  action: toggle
+          - type: horizontal-stack
+            cards:
+              - show_name: true
+                show_icon: true
+                type: button
+                name: 5 min
+                icon: ""
+                tap_action:
+                  action: call-service
+                  service: script.arrosage_manuel_minutes
+                  service_data:
+                    duree: 5
+              - show_name: true
+                show_icon: true
+                type: button
+                name: 10 min
+                icon: ""
+                tap_action:
+                  action: call-service
+                  service: script.arrosage_manuel_minutes
+                  service_data:
+                    duree: 10
+              - show_name: true
+                show_icon: true
+                type: button
+                name: 20 min
+                icon: ""
+                tap_action:
+                  action: call-service
+                  service: script.arrosage_manuel_minutes
+                  service_data:
+                    duree: 20
+              - show_name: true
+                show_icon: true
+                type: button
+                name: 30 min
+                icon: ""
+                tap_action:
+                  action: call-service
+                  service: script.arrosage_manuel_minutes
+                  service_data:
+                    duree: 30
+background:
+  opacity: 33
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: /api/image/serve/24927f97205530927b16b2bfcd1f4cb2/original
+cards: []
