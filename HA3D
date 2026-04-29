@@ -1,0 +1,202 @@
+type: custom:grid-layout
+title: Imprimante 3D
+path: imprimante-3d
+sections: []
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: custom:bubble-card
+            card_type: button
+            button_type: state
+            entity: sensor.prusa_core_one_avancement
+            show_name: false
+            icon: mdi:printer-3d
+            sub_button:
+              - show_state: true
+                entity: sensor.prusa_core_one
+                show_icon: false
+              - show_state: true
+                state_background: false
+                entity: sensor.prusa_core_one_fin_de_l_impression
+                tap_action:
+                  action: navigate
+                  navigation_path: "#3DPRINT"
+                show_icon: false
+                show_last_changed: false
+                show_attribute: true
+            card_layout: large-2-rows
+            rows: "1.1"
+            button_action:
+              tap_action:
+                action: navigate
+                navigation_path: "#3DPRINT"
+            tap_action:
+              action: navigate
+              navigation_path: "#3DPRINT"
+            modules:
+              - progress_bar
+            cover_gradient_background_indicator:
+              inverted: true
+            progress_bar:
+              progress_color: orange
+              min_value: 0
+              max_value: 100
+              custom_entity: sensor.prusa_core_one_avancement
+              conditional_colors:
+                condition_color_1: green
+                condition_2:
+                  - condition: numeric_state
+                    entity_id: sensor.prusa_core_one_avancement
+                    above: 99
+      - type: horizontal-stack
+        cards:
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.prusa_core_one_temperature_de_la_buse
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.prusa_core_one_temperature_de_la_buse
+                    name: Conso
+                    color_thresholds:
+                      - value: 15
+                        color: "#00b4d8"
+                      - value: 20
+                        color: "#a7c957"
+                      - value: 23
+                        color: "#ffbd00"
+                      - value: 25
+                        color: "#ffba08"
+                      - value: 27
+                        color: "#faa307"
+                      - value: 29
+                        color: "#d00000"
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                     
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                --ha-card-border-width: 0;
+                 }
+          - type: custom:stack-in-card
+            cards:
+              - type: custom:mushroom-entity-card
+                entity: sensor.prusa_core_one_temperature_du_plateau_chauffant
+                primary_info: state
+                secondary_info: none
+                card_mod:
+                  style: |
+                    ha-card {
+                      z-index: 1;
+                      --ha-card-border-width: 0;
+                    }
+              - type: custom:mini-graph-card
+                entities:
+                  - entity: sensor.prusa_core_one_temperature_du_plateau_chauffant
+                    color: red
+                    smoothing: false
+                    aggregate_func: min
+                height: 80
+                hours_to_show: 8
+                points_per_hour: 15
+                line_width: 1
+                animate: true
+                show:
+                  name: false
+                  icon: false
+                  state: false
+                  legend: false
+                  fill: fade
+                card_mod:
+                  style: |
+                    ha-card {
+                      position: absolute !important;
+                      height: 100%;
+                      width: 80%;
+                      right: 0px;
+                      bottom: 0px;
+                      --ha-card-border-width: 0;
+                    }
+                    ha-card:after {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                     
+                      --ha-card-border-width: 0;
+                    }
+            card_mod:
+              style: |
+                ha-card {
+                --ha-card-border-width: 0;
+                 }
+      - type: custom:bubble-card
+        card_type: button
+        entity: input_boolean.btv_imprimante_3d
+        icon: mdi:printer-3d
+        sub_button:
+          - entity: sensor.pc_imprimante_3d_power
+            show_state: true
+        force_icon: true
+        show_state: true
+        show_last_changed: true
+        show_attribute: false
+      - type: tile
+        entity: switch.pc_imprimante_3d
+        vertical: false
+        features_position: bottom
+  - type: horizontal-stack
+    cards:
+      - type: iframe
+        url: http://192.168.6.100
+        aspect_ratio: 25%
+      - type: custom:frigate-card
+        cameras:
+          - camera_entity: camera.192_168_5_197
+icon: mdi:printer-3d
+background:
+  opacity: 33
+  alignment: center
+  size: cover
+  repeat: repeat
+  attachment: fixed
+  image: /api/image/serve/83b5e77187a32259ed49fed880b92168/original
